@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emprendimiento</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .infografia-title {
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #1976d2;
+      text-align: center;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+    .infografia-sub {
+      text-align: center;
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 32px;
+    }
+    .tip-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(25,118,210,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      margin-bottom: 24px;
+      padding: 24px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .tip-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(25,118,210,0.15);
+    }
+    .tip-icon {
+      font-size: 2.5em;
+      color: #1976d2;
+      margin-bottom: 12px;
+      display: block;
+      text-align: center;
+      transition: color 0.2s;
+    }
+    .tip-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #1976d2;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .tip-desc {
+      color: #333;
+      font-size: 1em;
+      text-align: center;
+      margin-bottom: 0;
+      transition: max-height 0.3s;
+    }
+    .tip-extra {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s;
+      color: #555;
+      font-size: 0.98em;
+      margin-top: 10px;
+      text-align: left;
+    }
+    .tip-card.active .tip-extra {
+      max-height: 200px;
+      padding-top: 8px;
+    }
+    .arrow-down {
+      position: absolute;
+      right: 18px;
+      top: 22px;
+      font-size: 1.3em;
+      color: #1976d2;
+      transition: transform 0.3s;
+    }
+    .tip-card.active .arrow-down {
+      transform: rotate(180deg);
+    }
+    .step-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(25,118,210,0.08);
+      margin-bottom: 24px;
+      padding: 24px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .step-circle {
+      width: 48px;
+      height: 48px;
+      background: #1976d2;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .subtitulo {
+      color: #555;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 768px) {
+      .infografia-title { font-size: 1.5em; }
+      .step-card, .tip-card { padding: 16px 8px; }
+    }
+  </style>
+</head>
+<body class="cuerpo infografia-bg">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" id="color" class="style"> 
+  <div class="container-fluid">
+    <a class="navbar-brand"><H3 class="white">El emprendimiento</H3></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./index.html"><H5 class="white">¿Qué es?</H5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./caracteristicas.html"><H5 class="white">Caracteristicas</H5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./Tipos.html"><H5 class="white">Tipos</H5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./desafios.html"><H5 class="white">Desafios</H5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./historia.html"><H5 class="white">Historia</H5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./tips.html"><H5 class="white">Tips</H5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./Noticias.html"><H5 class="white">Noticias</H5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./foro.html"><H5 class="white">Foro</H5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./nosotros.html"><H5 class="white">Nosotros</H5></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div>
+    <br><br><h1 class="blue">¡Pasos para empezar a emprender!</h1>
+    <h3 class="subtitulo">¿Estas interesad@ en pasar de la idea a la realidad? Sigue tu camino emprendedor con estos tips que te ayudarán:</h3><br>
+</div> 
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-lightbulb"></i></span>
+        <div class="tip-title">1. Identifica una necesidad</div>
+        <div class="tip-desc">Piensa en problemas reales que puedas resolver.</div>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Observa tu entorno y escucha a las personas.</li>
+            <li>Haz preguntas y busca oportunidades donde otros ven dificultades.</li>
+            <li>Las mejores ideas nacen de necesidades cotidianas.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-search"></i></span>
+        <div class="tip-title">2. Investiga tu mercado</div>
+        <div class="tip-desc">Conoce a tus futuros clientes y competidores.</div>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Define tu público objetivo y sus preferencias.</li>
+            <li>Analiza qué ofrecen otros y cómo puedes diferenciarte.</li>
+            <li>Utiliza encuestas y redes sociales para obtener información.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-pencil"></i></span>
+        <div class="tip-title">3. Haz un plan sencillo</div>
+        <div class="tip-desc">Organiza tus ideas y define tus objetivos.</div><br>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Escribe tu misión, visión y metas a corto plazo.</li>
+            <li>Piensa en cómo vas a vender y promocionar tu producto.</li>
+            <li>Un plan te ayuda a no perder el rumbo.</li><br>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-cash-stack"></i></span>
+        <div class="tip-title">4. Busca financiamiento</div>
+        <div class="tip-desc">No necesitas mucho dinero para empezar.</div><br>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Considera ahorrar, pedir apoyo a familiares o usar crowdfunding.</li>
+            <li>Empieza pequeño y reinvierte tus ganancias.</li>
+            <li>Controla tus gastos desde el inicio.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-person-badge"></i></span>
+        <div class="tip-title">5. Legaliza tu negocio</div>
+        <div class="tip-desc">Registra tu marca y obtén los permisos necesarios.</div>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Elige un nombre único y regístralo.</li>
+            <li>Consulta los requisitos legales en tu país.</li>
+            <li>Evita problemas futuros cumpliendo con la ley.</li><br>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-megaphone"></i></span>
+        <div class="tip-title">6. Hazte visible</div>
+        <div class="tip-desc">Crea tu marca y usa redes sociales.</div><br>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Diseña un logo y una imagen atractiva.</li>
+            <li>Comparte tu historia y conecta con tu audiencia.</li>
+            <li>La autenticidad atrae clientes fieles.</li><br>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<script>
+  function toggleTip(card) {
+    card.classList.toggle('active');
+  }
+</script>
+
+<br><br><div class="container my-1">
+  <div >
+  <h1 class="blue">¡Planifica tu emprendimiento!</h1>
+  </div>
+  <p class="subtitulo">Responde estas preguntas y recibe recomendaciones personalizadas para organizar tu proyecto.</p>
+  <form id="testPlanificacion" class="p-4 rounded-4" style="margin:auto;">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <label class="form-label fw-bold"><i class="bi bi-person-circle"></i> Nombre del emprendimiento:</label>
+        <input type="text" class="form-control form-control-lg" name="nombre" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label fw-bold"><i class="bi bi-lightbulb"></i> ¿Cuál es tu idea principal?</label>
+        <input type="text" class="form-control form-control-lg" name="idea" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label fw-bold"><i class="bi bi-box-seam"></i> ¿Qué recursos tienes disponibles?</label>
+        <select class="form-select form-select-lg" name="recursos" required>
+          <option value="">Selecciona una opción</option>
+          <option value="capital">Capital propio</option>
+          <option value="contactos">Contactos y red</option>
+          <option value="conocimiento">Conocimiento y habilidades</option>
+          <option value="todos">Todos los anteriores</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label fw-bold"><i class="bi bi-people"></i> ¿Quién es tu público objetivo?</label>
+        <select class="form-select form-select-lg" name="publico" required>
+          <option value="">Selecciona una opción</option>
+          <option value="jovenes">Jóvenes</option>
+          <option value="adultos">Adultos</option>
+          <option value="empresas">Empresas</option>
+          <option value="general">Público general</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label fw-bold"><i class="bi bi-megaphone"></i> ¿Qué canales usarás para vender o promocionar?</label>
+        <select class="form-select form-select-lg" name="canal" required>
+          <option value="">Selecciona una opción</option>
+          <option value="redes">Redes sociales</option>
+          <option value="tienda">Tienda física</option>
+          <option value="web">Página web</option>
+          <option value="mixto">Combinación de varios</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label fw-bold"><i class="bi bi-cash-coin"></i> ¿Tienes un presupuesto definido?</label>
+        <select class="form-select form-select-lg" name="presupuesto" required>
+          <option value="">Selecciona una opción</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <div class="col-md-12">
+        <label class="form-label fw-bold"><i class="bi bi-flag"></i> ¿Cuál es tu meta principal para los próximos 6 meses?</label>
+        <input type="text" class="form-control form-control-lg" name="meta" required>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm">
+        <i class="bi bi-send"></i> Ver mis recomendaciones
+      </button>
+    </div>
+  </form>
+  <div id="resultadoPlanificacion" class="mt-5 d-flex justify-content-center"></div>
+</div>
+
+<script>
+document.getElementById('testPlanificacion').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const nombre = this.nombre.value;
+  const idea = this.idea.value;
+  const recursos = this.recursos.value;
+  const publico = this.publico.value;
+  const canal = this.canal.value;
+  const presupuesto = this.presupuesto.value;
+  const meta = this.meta.value;
+
+  let recomendaciones = `
+    <div class="card border-0 shadow-lg rounded-4">
+      <div class="card-body p-4">
+        <div class="text-center mb-3">
+          <h4 class="mb-2 blue">¡Tu plan inicial!</h4>
+        </div>
+        <p><strong><i class="bi bi-person-circle"></i> Emprendimiento:</strong> ${nombre}</p>
+        <p><strong><i class="bi bi-lightbulb"></i> Idea principal:</strong> ${idea}</p>
+        <p><strong><i class="bi bi-flag"></i> Meta para 6 meses:</strong> ${meta}</p>
+        <hr>
+  `;
+
+  if(recursos === "todos") {
+    recomendaciones += "<p><i class='bi bi-check-circle-fill text-success'></i> ¡Excelente! Tienes una base sólida para arrancar. Aprovecha todos tus recursos y busca alianzas estratégicas.</p>";
+  } else if(recursos === "capital") {
+    recomendaciones += "<p><i class='bi bi-piggy-bank text-warning'></i> Invierte tu capital con cuidado y prioriza lo esencial. Considera buscar apoyo o socios para complementar tus habilidades.</p>";
+  } else if(recursos === "contactos") {
+    recomendaciones += "<p><i class='bi bi-people-fill text-info'></i> Utiliza tu red de contactos para conseguir clientes, aliados y difusión. El networking será clave para tu crecimiento.</p>";
+  } else if(recursos === "conocimiento") {
+    recomendaciones += "<p><i class='bi bi-journal-richtext text-primary'></i> Tu experiencia y habilidades son tu mejor herramienta. No dudes en seguir aprendiendo y capacitarte.</p>";
+  }
+
+  if(publico === "jovenes") {
+    recomendaciones += "<p><i class='bi bi-phone text-primary'></i> Enfoca tu comunicación en redes sociales y formatos visuales. Los jóvenes valoran la autenticidad y la innovación.</p>";
+  } else if(publico === "adultos") {
+    recomendaciones += "<p><i class='bi bi-person-badge text-secondary'></i> Destaca la confianza y la calidad. Usa canales como Facebook, WhatsApp y eventos presenciales.</p>";
+  } else if(publico === "empresas") {
+    recomendaciones += "<p><i class='bi bi-building text-dark'></i> Prepara presentaciones profesionales y busca reuniones B2B. LinkedIn y el correo corporativo serán útiles.</p>";
+  } else {
+    recomendaciones += "<p><i class='bi bi-people text-success'></i> Adapta tu mensaje para llegar a diferentes públicos. Prueba varios canales y mide resultados.</p>";
+  }
+
+  if(canal === "redes") {
+    recomendaciones += "<p><i class='bi bi-instagram text-danger'></i> Invierte en contenido digital y publicidad en redes sociales. Interactúa con tu audiencia y crea comunidad.</p>";
+  } else if(canal === "tienda") {
+    recomendaciones += "<p><i class='bi bi-shop text-warning'></i> Ubica tu tienda en un lugar estratégico y ofrece una experiencia única al cliente.</p>";
+  } else if(canal === "web") {
+    recomendaciones += "<p><i class='bi bi-globe text-info'></i> Desarrolla una página web atractiva y funcional. Optimiza para buscadores y ofrece ventas online.</p>";
+  } else {
+    recomendaciones += "<p><i class='bi bi-kanban text-success'></i> Combina varios canales para ampliar tu alcance y diversificar tus ventas.</p>";
+  }
+
+  if(presupuesto === "si") {
+    recomendaciones += "<p><i class='bi bi-cash-coin text-success'></i> ¡Muy bien! Lleva un control detallado de tus gastos e ingresos. Revisa tu presupuesto cada mes.</p>";
+  } else {
+    recomendaciones += "<p><i class='bi bi-exclamation-circle text-danger'></i> Define tu presupuesto cuanto antes. Esto te ayudará a evitar sorpresas y tomar mejores decisiones.</p>";
+  }
+
+  recomendaciones += `<hr><p class="fw-bold text-center"><i class="bi bi-arrow-repeat"></i> ¡Revisa y ajusta tu plan cada mes para avanzar hacia tu meta!</p>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('resultadoPlanificacion').innerHTML = recomendaciones;
+  this.reset();
+});
+</script>
+<div class="container my-5">
+  <div class="blue"><h1>Tips para ser una persona más productiva y organizada</h1></div>
+  <p class="subtitulo">¿Quieres aprovechar mejor tu tiempo y ser más eficiente? Aquí tienes algunos consejos prácticos:</p><br>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-3">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-calendar-check"></i></span>
+        <div class="tip-title">1. Planifica tu día</div>
+        <div class="tip-desc">Dedica unos minutos a organizar tus tareas.</div><br>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Haz una lista de pendientes cada mañana.</li>
+            <li>Prioriza lo más importante y urgente.</li>
+            <li>Usa agendas o apps para no olvidar nada.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-alarm"></i></span>
+        <div class="tip-title">2. Establece horarios</div>
+        <div class="tip-desc">Define bloques de tiempo para cada actividad.</div><br>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Evita distracciones y respeta tus tiempos.</li>
+            <li>Incluye pausas cortas para descansar.</li>
+            <li>La rutina ayuda a mantener el enfoque.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-inbox"></i></span>
+        <div class="tip-title">3. Mantén tu espacio ordenado</div>
+        <div class="tip-desc">Un ambiente limpio mejora la concentración.</div>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Organiza tu escritorio y elimina lo innecesario.</li>
+            <li>Guarda documentos y materiales en su lugar.</li>
+            <li>Dedica unos minutos al final del día para ordenar.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-check2-circle"></i></span>
+        <div class="tip-title">4. Evalúa tus avances</div>
+        <div class="tip-desc">Revisa lo que lograste y ajusta tus metas.</div><br>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Al final del día, reflexiona sobre tus logros.</li>
+            <li>Identifica áreas de mejora y celebra tus avances.</li>
+            <li>Esto te motiva y te ayuda a crecer.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleTip(card) {
+    card.classList.toggle('active');
+  }
+</script>
+
+<div class="container my-5">
+  <br><div class="blue"><h1>¿Quieres ser un emprendedor exitoso?</h1></div>
+  <p class="subtitulo">Claves esenciales para impulsar tu negocio y alcanzar tus metas:</p><br>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-lightbulb"></i></span>
+        <div class="tip-title">1. Sé creativo e innovador</div>
+        <div class="tip-desc">Busca soluciones nuevas y diferentes.</div>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Piensa fuera de lo común y atrévete a experimentar.</li>
+            <li>La innovación te ayuda a destacar en el mercado.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-search"></i></span>
+        <div class="tip-title">2. Investiga tu mercado</div>
+        <div class="tip-desc">Conoce a tus clientes y competidores.</div>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Analiza tendencias y necesidades reales.</li>
+            <li>Adapta tu producto o servicio según la demanda.</li><br>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-pencil"></i></span>
+        <div class="tip-title">3. Planifica y organiza</div>
+        <div class="tip-desc">Define metas claras y estrategias.</div>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Elabora un plan de negocios y síguelo.</li>
+            <li>Revisa y ajusta tus objetivos periódicamente.</li><br>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-cash-stack"></i></span>
+        <div class="tip-title">4. Administra bien tus finanzas</div>
+        <div class="tip-desc">Controla ingresos y gastos desde el inicio.</div><br>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Haz presupuestos y evita deudas innecesarias.</li>
+            <li>Reinvierte en tu negocio para crecer.</li><br>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-people"></i></span>
+        <div class="tip-title">5. Rodéate de un buen equipo</div>
+        <div class="tip-desc">Trabaja con personas que compartan tu visión.</div>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Busca colaboradores con habilidades complementarias.</li>
+            <li>Fomenta el trabajo en equipo y la comunicación.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-person-badge"></i></span>
+        <div class="tip-title">6. Aprende constantemente</div>
+        <div class="tip-desc">Actualízate y mejora tus conocimientos.</div><br>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Lee, toma cursos y asiste a eventos de tu sector.</li>
+            <li>La formación continua te mantiene competitivo.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-emoji-smile"></i></span>
+        <div class="tip-title">7. Sé perseverante y resiliente</div>
+        <div class="tip-desc">No te rindas ante los obstáculos.</div>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Aprende de los fracasos y sigue adelante.</li>
+            <li>La constancia es clave para el éxito.</li><br><br>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-chat-dots"></i></span>
+        <div class="tip-title">8. Escucha a tus clientes</div>
+        <div class="tip-desc">Recoge opiniones y mejora tu oferta.</div>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Solicita feedback y adapta tu producto o servicio.</li>
+            <li>La satisfacción del cliente te ayuda a crecer.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="tip-card" onclick="toggleTip(this)">
+        <span class="tip-icon"><i class="bi bi-heart"></i></span>
+        <div class="tip-title">9. Disfruta el proceso</div>
+        <div class="tip-desc">Emprender es una aventura, vive cada etapa.</div>
+        <span class="arrow-down"><i class="bi bi-chevron-down"></i></span>
+        <div class="tip-extra">
+          <ul>
+            <li>Celebra tus logros y aprende de cada experiencia.</li>
+            <li>La pasión y el entusiasmo te llevarán lejos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleTip(card) {
+    card.classList.toggle('active');
+  }
+</script>
+
+<br><footer class="text-white text-center py-3" style="background-color: #9ACBD9;">
+        <h5>&copy; 2025 El emprendimiento. Todos los derechos reservados.</h5>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+</body>
+</html>

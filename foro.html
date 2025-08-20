@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>el emprendimiento</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</head>
+
+<body class="cuerpo">
+  <div class="foro-contenido">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="color" class="style"> 
+      <div class="container-fluid">
+        <a class="navbar-brand"><H3 class="white">El emprendimiento</H3></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html"><H5 class="white">¿Qué es?</H5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./caracteristicas.html"><H5 class="white">Caracteristicas</H5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Tipos.html"><H5 class="white">Tipos</H5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./desafios.html"><H5 class="white">Desafios</H5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./historia.html"><H5 class="white">Historia</H5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./tips.html"><H5 class="white">Tips</H5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Noticias.html"><H5 class="white">Noticias</H5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./foro.html"><H5 class="white">Foro</H5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./nosotros.html"><H5 class="white">Nosotros</H5></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <br><br><h1 class="blue text-center mb-4">Foro de Emprendimiento</h1>
+      <p class="subtitulo">Bienvenido al foro de emprendimiento, un espacio para compartir ideas, hacer preguntas y conectar con otros emprendedores. Aquí puedes publicar tus comentarios, responder a otros usuarios y participar en discusiones sobre diversos temas relacionados con el emprendimiento.</p>
+      <h3 class="subtitulo"><strong>El punto de encuentro para mentes que transforman el futuro.</strong></h3>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <form id="foroForm">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="comentario" class="form-label">Comentario:</label>
+              <textarea class="form-control" id="comentario" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Publicar</button>
+          </form>
+        </div>
+      </div>
+      <div id="foroComentarios">
+      </div>
+    </div>
+
+    <script>
+      function cargarComentarios() {
+        const comentarios = JSON.parse(localStorage.getItem('comentariosForo') || '[]');
+        document.getElementById('foroComentarios').innerHTML = '';
+        comentarios.forEach(comentario => {
+          document.getElementById('foroComentarios').insertAdjacentHTML('afterbegin', comentario.html);
+        });
+      }
+
+      cargarComentarios();
+
+      document.getElementById('foroForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value.trim();
+        const comentario = document.getElementById('comentario').value.trim();
+        if(nombre && comentario) {
+          const comentarioId = 'comentario-' + Date.now();
+          const comentarioHTML = `
+            <div class="card mb-3 border-0 shadow-sm" id="${comentarioId}">
+              <div class="card-body">
+                <h6 class="fw-bold mb-1">${nombre}</h6>
+                <p class="mb-2">${comentario}</p>
+                <button class="btn btn-outline-success btn-sm me-gusta-btn" data-likes="0">Me gusta <span class="likes-count">0</span></button>
+                <button class="btn btn-outline-primary btn-sm responder-btn">Responder</button>
+                <div class="mt-3 respuestas"></div>
+              </div>
+            </div>
+          `;
+          document.getElementById('foroComentarios').insertAdjacentHTML('afterbegin', comentarioHTML);
+
+          const comentarios = JSON.parse(localStorage.getItem('comentariosForo') || '[]');
+          comentarios.push({ id: comentarioId, html: comentarioHTML });
+          localStorage.setItem('comentariosForo', JSON.stringify(comentarios));
+
+          document.getElementById('foroForm').reset();
+        }
+      });
+
+      document.getElementById('foroComentarios').addEventListener('click', function(e) {
+        if(e.target.classList.contains('me-gusta-btn')) {
+          let likes = parseInt(e.target.getAttribute('data-likes')) + 1;
+          e.target.setAttribute('data-likes', likes);
+          e.target.querySelector('.likes-count').textContent = likes;
+        }
+        if(e.target.classList.contains('responder-btn')) {
+          const respuestasDiv = e.target.parentElement.querySelector('.respuestas');
+          if(!respuestasDiv.querySelector('form')) {
+            const formHTML = `
+              <form class="respuesta-form mt-2">
+                <input type="text" class="form-control mb-2" placeholder="Tu nombre" required>
+                <textarea class="form-control mb-2" rows="2" placeholder="Escribe tu respuesta" required></textarea>
+                <button type="submit" class="btn btn-success btn-sm">Publicar respuesta</button>
+              </form>
+            `;
+            respuestasDiv.insertAdjacentHTML('beforeend', formHTML);
+          }
+        }
+        if(e.target.classList.contains('btn-success') && e.target.closest('.respuesta-form')) {
+          e.preventDefault();
+          const form = e.target.closest('.respuesta-form');
+          const nombre = form.querySelector('input').value.trim();
+          const respuesta = form.querySelector('textarea').value.trim();
+          if(nombre && respuesta) {
+            const respuestaHTML = `
+              <div class="card mb-2 border-0 bg-light">
+                <div class="card-body py-2">
+                  <strong>${nombre}:</strong> ${respuesta}
+                </div>
+              </div>
+            `;
+            form.insertAdjacentHTML('beforebegin', respuestaHTML);
+            form.remove();
+          }
+        }
+      });
+    </script>
+
+    <br><br><footer class="text-white text-center py-3" style="background-color: #9ACBD9;">
+            <h5>&copy; 2025 El emprendimiento. Todos los derechos reservados.</h5>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+.cuerpo{
+    background-color: #F2EFE7;
+}
+
+.white{
+    color: white;
+}
+
+#color{
+    background-color: #9ACBD9 !important;
+}
+
+@media (min-width: 992px) {
+    #navbarNavDropdown {
+        display: flex !important;
+        flex-basis: auto;
+        flex-direction: row-reverse;
+    margin-right: 1rem;
+}
+}
+
+.navbar-brand {
+    margin-left: 1rem;
+}
+
+.subtitulo{
+  font-size: 22px;
+  text-align: center;
+  margin: 3%;
+  font-family: subtitulo;
+}
+
+#carouselExampleCaptions{
+  position: relative;
+  width: 70vw;
+  height: 65vh;
+  overflow: hidden;
+  margin-left: 15%;
+  margin-right: 5%;
+}
+
+.blue{
+  color: #006A71;
+  text-align: center;
+}
+
+.img-overlay-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.img-overlay-container img {
+  width: 100%;
+  display: block;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.85);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-overlay-container:hover .img-overlay,
+.img-overlay-container:active .img-overlay {
+  opacity: 1;
+}
+
+.img-fluid rounded shadow{
+  width: 20%;
+  height: 20%;
+}
+
+.question {
+      margin-bottom: 2rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1.5rem;
+    }
+
+.question label {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #006A71;
+    }
+
+.options {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+.option-label {
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+.option-label:hover, .option-label input:checked + span {
+      background: #ccf3f700;
+    }
+
+#result {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background: #e3f2fd;
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: #006A71;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+
+.btn-primary {
+      background: #006A71;
+      border: none;
+      font-size: 1.1rem;
+      padding: 0.7rem 2rem;
+      border-radius: 8px;
+    }
+
+.btn-primary:hover {
+      background: #0097a7;
+    }
+
+.option-label.active {
+      background: #ffffff;
+      border: 2px solid #0097a7;
+      color: #fff;
+    }
+    
+
+.step-card {
+  background: #fff;
+  border: 1px solid #e3f2fd;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.step-card:hover {
+  box-shadow: 0 4px 16px rgba(0,106,113,0.12);
+  transform: translateY(-6px) scale(1.03);
+}
+.step-circle {
+  width: 48px;
+  height: 48px;
+  background: #9ACBD9;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,106,113,0.08);
+}
+         
+body { background: #F2EFE7; }
+    .carousel-item {
+      height: 420px;
+      position: relative;
+      transition: transform 0.5s;
+    }
+    .carousel-item img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      filter: brightness(0.7);
+      border-radius: 18px;
+    }
+    .carousel-caption {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      right: 10%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.813);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 4px 24px rgba(0,106,113,0.12);
+      color: #006A71;
+      text-align: left;
+    }
+    .carousel-caption h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .carousel-caption p {
+      font-size: 1.15rem;
+      margin-bottom: 1.2rem;
+    }
+    .carousel-caption .btn {
+      background: #7ec3d6;
+      color: #fff;
+      border-radius: 20px;
+      font-weight: 500;
+      padding: 0.5rem 2rem;
+      border: none;
+      transition: background 0.2s;
+    }
+    .carousel-caption .btn:hover {
+      background: #006A71;
+    }
+    .carousel-indicators [data-bs-target] {
+      background-color: #9ACBD9;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      margin: 0 6px;
+    }
+    @media (max-width: 768px) {
+      .carousel-caption {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+      }
+      .carousel-caption h2 {
+        font-size: 1.3rem;
+      }
+    }  
+
+.card:hover {
+  transform: scale(1.07);
+  transition: transform 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+    
+.timeline-colombia-dinamica {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+.timeline-col-item {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(58,124,165,0.08);
+  padding: 18px 24px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.timeline-col-item:hover {
+  transform: scale(1.03) translateY(-2px);
+  box-shadow: 0 8px 24px rgba(58,124,165,0.15);
+}
+.timeline-col-icon {
+  flex-shrink: 0;
+  margin-right: 24px;
+  animation: bounceIn 1s;
+}
+.timeline-col-content h5 {
+  color: #3A7CA5;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.timeline-col-content p {
+  color: #444;
+  margin: 0;
+  font-size: 1rem;
+}
+@keyframes bounceIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@media (max-width: 600px) {
+  .timeline-col-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 12px;
+  }
+  .timeline-col-icon {
+    margin-bottom: 12px;
+    margin-right: 0;
+  }
+}
+
+.redes-zoom a img {
+  transition: transform 0.3s;
+  margin: 0 7px; 
+}
+.redes-zoom a img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px rgba(25,118,210,0.15);
+}
